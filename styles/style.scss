@@ -1,0 +1,334 @@
+@import "./mixins";
+*{
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+}
+#header{
+    @include tablet{
+       padding:25px 5px ;
+    }
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+  .logo{
+    &__title{
+      cursor: pointer;
+    }
+  }
+  .navigation{
+    @include tablet{
+        display: none;
+    }
+    &__list{
+        list-style-type: none;
+        display: flex;
+        &-item{
+            &-link{
+              text-decoration: none;
+              margin: 0 40px;
+              color: black;
+              transition: 0.3s;
+              &:hover{
+                border-bottom: 1.5px solid black;
+              }
+            }
+        }
+    }
+  }
+  .menu{
+    display: none;
+    @include tablet{
+        display: block;
+    }
+    &__link{
+        &-icon{
+           
+        }
+    }
+  }
+}
+
+#main{
+   .information{
+    background-color: black;
+    padding: 15px;
+    .information__bar{
+        text-align: center;
+        color: #fff;
+        &-price{
+            color: #fff;
+        }
+    }
+   }
+
+   .post{
+    background-color: #441314;
+     &__content{
+        @include tablet{
+            flex-wrap: wrap-reverse;
+            padding: 0 0 10% 0;
+            
+        }
+        display: flex;
+        justify-content: space-around;
+        &-img{
+             width:50%;
+             padding: 0 80px;
+            &-element{
+              width: 90%;
+            }
+        }
+        &-title{
+            @include tablet{
+                font-size: 15px;
+                line-height: 60px;
+                margin-bottom: 7%;
+            }
+         width: 50%;
+         margin-top: 13%;
+         font-size: 30px;
+         line-height: 80px;
+         color: #fff;
+         &-btn{
+            text-decoration: none;
+            color: black;
+            background-color: #fff;
+            padding: 14px 32px;
+            font-size: 14px;
+            transition: 0.5s;
+            &:hover{
+                opacity: 0.8;
+            }
+         }
+        }
+     }
+   }
+
+   .fall-collection{
+    @include tablet{
+        flex-direction: column;
+    }
+    background-color: #fff;
+     &__content{
+        @include tablet{
+            flex-wrap: wrap;
+        }
+        display: flex;
+        align-items: center;
+        padding: 0 5%;
+        &-title{
+            @include tablet{
+             width: 100%;
+             height: 20vh;
+             margin-left: 10%;
+             margin-bottom: 50px;
+            }
+            width: 25%;
+            height: 65vh;
+            margin-top: 15%;
+            line-height: 70px;
+            font-size: 16px;
+           &-btn{
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 14px 32px;
+            font-size: 14px;
+            transition: 0.5s;
+            &:hover{
+                opacity: 0.6;
+            }
+
+           }
+        }
+        &-img{
+            @include tablet{
+                width:100%;
+               flex-wrap: wrap;
+            }
+            width: 75%;
+            &-element{
+                @include tablet{
+                 width: 100%;
+                 transform: scale(0.8);
+                 object-fit: cover;
+                }
+                width: 33%;
+                height: 65vh;
+            }
+        }
+     }
+   }
+
+   .story{
+    width: 100%;
+    height: 30vh;
+     &__title{
+        @include tablet{
+         margin-top: 35%;
+        }
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        font-size: 40px;
+        margin-top: 10%;
+        cursor: pointer;
+        transition:  0.5s;
+        &:hover {
+            letter-spacing: 5px;
+            @include tablet{
+                letter-spacing: 0px;
+            }
+          }
+     }
+     &__backround{
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        position:fixed;
+        z-index: -1;
+        object-fit: cover;
+     }
+   }
+
+   .top2{
+    @include mobile{
+        flex-wrap: wrap;
+    }
+    @include tablet{
+        flex-wrap: wrap;
+    }
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    font-size: 20px;
+    .product{
+        @include tablet{
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        &__content{
+            &-img{
+            
+                width: 90%;
+                &-element{
+                   width: 100%;
+                }
+            }
+            &-title{
+                line-height: 50px;
+                &-btn{
+            background-color:black;     
+            text-decoration: none;
+            border: none;
+            color:#fff;
+            padding: 12px 25px;
+            transition: 0.5s;
+            &:hover{
+             opacity: 0.7;
+            }
+                }
+            }
+
+        }
+    }
+
+   }
+
+   .offers{
+    width: 100%;
+    height: 86vh;
+    background-image: url(../assets/images/twogirl.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &__content{
+        @include tablet{
+            width: 100%;
+            font-size: 16px;
+            line-height: 30px;
+            letter-spacing: 1px;
+        }
+       width: 100%;
+       color: #fff;
+       font-size: 35px;
+       line-height: 60px;
+       letter-spacing: 5px;
+       font-family: Arial, Helvetica, sans-serif;
+       &-form{
+        padding: 10%;
+        @include tablet{
+            padding: 20%;
+        }
+        &-inpt{
+            @include tablet{
+               padding: 16px 45px;
+               margin-top: 20%;
+            }
+          margin-top: 50px;
+          padding: 16px 100px;
+          outline: none;
+          border: none;
+          background-color: #dadce0;
+          color: rgb(136, 136, 136);
+          font-size: 16px;
+          letter-spacing: 1.5px;
+        }
+        &-btn{
+            @include tablet{
+                margin-top: 10%;
+             }   
+         padding: 16px 32px;
+         background-color: black;
+         color: #fff;
+         border: none;
+         transition: 0.4s;
+         &:hover{
+            background-color:rgb(86, 86, 86);
+         }
+        }
+    }
+    }
+  
+   }
+
+}
+
+#footer{
+    background-color: #fff;
+    .footer__col{
+        @include tablet{
+            flex-direction: column;
+            margin-left: 20%;
+        }
+        display: flex;
+        justify-content: space-around;
+        &-list{
+            padding: 7%;
+            &-icon{
+                a{
+                    text-decoration: none;
+                    margin: 0 15px;
+                }
+            }
+            line-height: 70px;
+            font-size: 20px;
+            font-weight: 200;
+            &-item{
+                list-style-type: none;
+                &-link{
+                  color: black;
+                }
+            }
+        }
+    }
+   }
